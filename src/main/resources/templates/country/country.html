@@ -50,6 +50,7 @@
                             </li>
                             <li><a class="dropdown-item" href="#" id="selDelete">删除</a></li>
                         </ul>
+                        <input id="operation" style="display:none">
                     </div>
                     <!--show query area-->
                     <div id="queryContainer" style="display:none">
@@ -86,14 +87,14 @@
             <div class="collapse show" id="collapseDetail">
                 <div class="card card-body">
                     <!-- th:object -->
-                    <form id="frmDetail" action="#" method="post">
+                    <form id="frmDetail" action="#" th:object="${countryOperationForm}" method="post">
                         <div class="mb-3">
-                            <label for="countryCodeInput" class="form-label">Email address</label>
-                            <input type="text" class="form-control" id="countryCodeInput" placeholder="country code">
+                            <label for="countryCodeInput" class="form-label">Country Code</label>
+                            <input type="text" class="form-control" id="countryCodeInput" th:field="*{mstcountrycd}" placeholder="country code">
                         </div>
                         <div class="mb-3">
-                            <label for="countryNameInput" class="form-label">Example textarea</label>
-                            <input type="text" class="form-control" id="countryNameInput"></input>
+                            <label for="countryNameInput" class="form-label">Country Name</label>
+                            <input type="text" class="form-control" id="countryNameInput" th:field="*{mstcountrynanme}" ></input>
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                             <button id="updateBtn" type="button" class="btn btn-primary me-md-2">更新</button>
